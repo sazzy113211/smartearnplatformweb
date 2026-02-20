@@ -1,0 +1,2 @@
+# smartearnplatformweb
+A CRYPTO PLATFORM
