@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Earn Withdraw</title>
+<style>
+body{
+    margin:0;
+    background:#000;
+    font-family: Arial, sans-serif;
+    color:white;
+}
+
+/* Header */
+.header{
+    background:#ffcc00;
+    color:black;
+    text-align:center;
+    padding:15px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* Card */
+.card{
+    width:90%;
+    max-width:400px;
+    margin:30px auto;
+    background:#111;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 0 15px rgba(0,0,0,0.6);
+}
+
+/* Inputs */
+input, select{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:10px;
+    background:#333;
+    color:white;
+    font-size:16px;
+}
+
+/* Amount box */
+.amount{
+    background:#333;
+    text-align:center;
+    color:#ffcc00;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* Buttons */
+button{
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    background:#ffcc00;
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+</style>
+</head>
+<body>
+<div class="header">Withdraw</div>
+<div class="card">
+  <input type="text" placeholder="Account Name">
+
+  <select>
+    <option>Select Bank</option>
+    <option>Access Bank</option>
+    <option>Citibank Nigeria</option>
+    <option>Ecobank Nigeria</option>
+    <option>Fidelity Bank</option>
+    <option>First Bank Nigeria</option>
+    <option>First City Monument Bank (FCMB)</option>
+    <option>Globus Bank</option>
+    <option>Guaranty Trust Bank (GTBank)</option>
+    <option>Heritage Bank</option>
+    <option>Jaiz Bank</option>
+    <option>Keystone Bank</option>
+    <option>Kuda Microfinance Bank</option>
+    <option>Lotus Bank</option>
+    <option>Moniepoint Microfinance Bank</option>
+    <option>Opay</option>
+    <option>PalmPay</option>
+    <option>Polaris Bank</option>
+    <option>Providus Bank</option>
+    <option>Stanbic IBTC Bank</option>
+    <option>Standard Chartered Bank</option>
+    <option>Sterling Bank</option>
+    <option>SunTrust Bank</option>
+    <option>Union Bank</option>
+    <option>United Bank for Africa (UBA)</option>
+    <option>Wema Bank</option>
+    <option>Zenith Bank</option>
+  </select>
+
+  <input type="number" placeholder="Account Number">
+  <input class="amount" value="₦100,000.00" readonly="">
+
+  <button onclick="window.location.href='withdraw-setup.html'">SUBMIT</button>
+  <button onclick="history.back()">GO BACK</button>
+</div>
+
+</body></html>

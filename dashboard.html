@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Earn Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+        body { background:#000; color:#fff; overflow-x: hidden; padding-bottom: 80px; }
+        
+        /* NOTIFICATIONS */
+        #notify {
+            position: fixed; top: -120px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 400px; background: #ffd400; color: #000;
+            padding: 15px; border-radius: 12px; text-align: center;
+            box-shadow: 0px 4px 15px rgba(255, 212, 0, 0.4);
+            transition: top 0.5s; z-index: 3000; font-weight: bold;
+        }
+        #live-toast {
+            position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%);
+            width: 85%; max-width: 350px; background: rgba(30, 30, 30, 0.98);
+            color: #fff; padding: 12px 20px; border-radius: 50px;
+            border: 1px solid #ffd400; text-align: center;
+            font-size: 12px; z-index: 2000; transition: bottom 0.5s;
+        }
+
+        /* TOP NAV */
+        .topbar { display:flex; justify-content:space-between; align-items:center; padding:12px 14px; background:#111; }
+        .logo-icon { background:#ffd400; color:#000; padding:5px 8px; border-radius:5px; font-weight:900; }
+        .underline { height:3px; background:#ffd400; }
+        .welcome { background:#ffd400; color:#000; text-align:center; padding:10px; font-size:16px; font-weight:bold; }
+
+        /* BALANCE CARD */
+        .balance-card { margin:15px; padding:20px; border-radius:20px; background:linear-gradient(135deg,#ffd400,#b29400); text-align:center; }
+        .balance-card h1 { font-size:38px; color: #000; font-weight: 900; }
+        .balance-card button { padding:10px 20px; border:none; border-radius:25px; font-weight:bold; background: #000; color: #ffd400; margin-top: 8px; }
+
+        /* IMAGE SLIDER (CAROUSEL) */
+        .slider-container {
+            margin: 0 15px;
+            height: 160px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #333;
+        }
+        .slider {
+            display: flex;
+            width: 400%; /* 4 images */
+            height: 100%;
+            transition: transform 0.8s ease-in-out;
+        }
+        .slider img {
+            width: 25%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* GRID MENU (SHRUNK FOR SPACE) */
+        .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding:15px; }
+        .grid-item { background:#151515; border-radius:12px; padding:15px 5px; text-align:center; cursor: pointer; border: 1px solid #252525; }
+        .grid-item i { font-size:20px; color:#ffd400; margin-bottom:5px; }
+        .grid-item p { font-size: 10px; font-weight: bold; color: #eee; text-transform: uppercase; }
+
+        .logout-btn { background:#151515; padding:12px; border-radius:12px; text-align:center; color: #ff4444; margin: 0 15px; font-weight: bold; font-size: 14px; border: 1px solid #252525; }
+    </style>
+</head>
+<body>
+
+    <div id="notify"></div>
+    <div id="live-toast"></div>
+
+    <div class="topbar">
+        <div style="display:flex; align-items:center;"><div class="logo-icon">S E</div><span style="margin-left:8px; font-weight:bold;">SMART EARN</span></div>
+        <i class="fas fa-bell" style="color:#ffd400;"></i>
+    </div>
+    <div class="underline"></div>
+
+    <div class="welcome">Hi, <span id="userName">User</span></div>
+
+    <div class="balance-card">
+        <p style="color:#000; font-size:12px; font-weight:bold;">WALLET BALANCE</p>
+        <h1 id="balance">₦0.00</h1>
+        <button id="claimBtn" onclick="claimBonus()">Claim Bonus</button>
+    </div>
+
+    <div class="slider-container">
+        <div class="slider" id="mainSlider">
+            <img src="images/promo1.jpg" alt="Smart Earn Shirt Money">
+            <img src="images/promo2.jpg" alt="Airtime Promo Shouting">
+            <img src="images/promo3.jpg" alt="Smart Earn Office">
+            <img src="images/promo4.jpg" alt="Smart Earn Company">
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="grid-item" onclick="location.href='support.html'"><i class="fas fa-headset"></i><p>Support</p></div>
+        <div class="grid-item" onclick="location.href='group.html'"><i class="fas fa-users"></i><p>Groups</p></div>
+        <div class="grid-item" onclick="location.href='withdrawal.html'"><i class="fas fa-arrow-up"></i><p>Withdraw</p></div>
+        <div class="grid-item" onclick="location.href='airtime.html'"><i class="fas fa-mobile-alt"></i><p>Airtime</p></div>
+        <div class="grid-item" onclick="location.href='data.html'"><i class="fas fa-wifi"></i><p>Data</p></div>
+        <div class="grid-item" onclick="location.href='betting.html'"><i class="fas fa-dice"></i><p>Betting</p></div>
+        <div class="grid-item" onclick="location.href='tv.html'"><i class="fas fa-tv"></i><p>TV</p></div>
+        <div class="grid-item" onclick="location.href='invite.html'"><i class="fas fa-user-plus"></i><p>Invite</p></div>
+        <div class="grid-item"><i class="fas fa-ellipsis-h"></i><p>More</p></div>
+    </div>
+
+    <div class="logout-btn" onclick="logout()">LOGOUT</div>
+
+    <script>
+        const storedUser = localStorage.getItem("smartEarnUser") || "User";
+        document.getElementById("userName").textContent = storedUser;
+
+        // --- IMAGE SLIDER LOGIC ---
+        let currentSlide = 0;
+        const slider = document.getElementById('mainSlider');
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % 4;
+            slider.style.transform = `translateX(-${currentSlide * 25}%)`;
+        }
+        setInterval(nextSlide, 4000); // Change image every 4 seconds
+
+        // --- BRAVO NOTIFICATION (10s) ---
+        const names = ["Obi", "Musa", "Chidi", "Amina", "Blessing", "Emeka", "Fatima", "Samuel", "Grace", "Ibrahim", "Tunde", "Chioma", "Zainab", "Victor", "Joy", "Uche", "Abubakar", "Precious", "Okon", "Yusuf"];
+        function showLiveWithdrawal() {
+            const toast = document.getElementById('live-toast');
+            const name = names[Math.floor(Math.random() * names.length)];
+            const amt = Math.floor(Math.random() * (100000 - 10000 + 1) + 10000).toLocaleString();
+            toast.innerHTML = `✅ ${name} successful withdrawal <b>₦${amt}</b>`;
+            toast.style.bottom = "25px";
+            setTimeout(() => { toast.style.bottom = "-100px"; }, 4000); 
+        }
+        setInterval(showLiveWithdrawal, 10000);
+
+        // --- CLAIM LOGIC ---
+        window.onload = () => {
+            if(localStorage.getItem("reversed") === "true") {
+                document.getElementById("balance").innerText = "₦100,000";
+                document.getElementById("claimBtn").disabled = true;
+                document.getElementById("claimBtn").innerText = "Claimed";
+            }
+        };
+        function claimBonus() {
+            const btn = document.getElementById("claimBtn");
+            btn.disabled = true; btn.innerText = "Wait...";
+            setTimeout(() => {
+                document.getElementById("balance").innerText = "₦100,000";
+                localStorage.setItem("reversed", "true");
+                btn.innerText = "Claimed";
+                const notify = document.getElementById("notify");
+                notify.innerHTML = `₦100,000 Bonus Added!`;
+                notify.style.top = "20px";
+                setTimeout(() => { notify.style.top = "-120px"; }, 4000);
+            }, 1500);
+        }
+        function logout() { localStorage.clear(); window.location.href = "index.html"; }
+    </script>
+</body>
+</html>

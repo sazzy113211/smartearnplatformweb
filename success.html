@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transaction Failed</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background: #0a0a0a; /* Deep Black Background */
+        color: white;
+    }
+
+    /* Top bar */
+    .top-bar {
+        background: #111;
+        padding: 15px;
+        border-bottom: 1px solid #333;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .app-name {
+        font-weight: bold;
+        font-size: 16px;
+        color: #eee;
+    }
+
+    /* Failed header */
+    .failed-header {
+        background: #7b0000; /* Darker, serious red */
+        color: white;
+        text-align: center;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    /* Main Error Card */
+    .card {
+        margin: 40px 20px;
+        background: #161616; /* Slightly lighter black for contrast */
+        border: 2px solid #ff3b3b; /* Bright red border for "Error" signal */
+        border-radius: 20px;
+        padding: 40px 25px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(255, 59, 59, 0.2);
+    }
+
+    .error-icon {
+        font-size: 50px;
+        margin-bottom: 20px;
+        display: block;
+        filter: drop-shadow(0 0 10px rgba(255, 59, 59, 0.5));
+    }
+
+    .card h2 {
+        margin: 0 0 15px 0;
+        font-size: 24px;
+        color: #ff3b3b; /* Error Red text */
+    }
+
+    .card p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #bbb;
+        margin: 0;
+    }
+
+    .error-code {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 5px 12px;
+        background: #222;
+        border-radius: 5px;
+        font-family: monospace;
+        font-size: 12px;
+        color: #ff3b3b;
+    }
+
+    /* Buttons */
+    .btn-container {
+        padding: 0 20px;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 18px;
+        background: #ff3b3b; /* Vibrant Red */
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 16px;
+        box-sizing: border-box;
+        transition: transform 0.1s;
+    }
+
+    .btn:active {
+        transform: scale(0.97);
+        background: #d32f2f;
+    }
+
+    .help-text {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 13px;
+        color: #666;
+    }
+
+    .help-text a {
+        color: #ff3b3b;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="app-name">Smart Earn</div>
+    <div>🔔</div>
+</div>
+
+<div class="failed-header">
+    CONNECTION ERROR
+</div>
+
+<div class="card">
+    <span class="error-icon">❌</span>
+    <h2>Transaction Failed</h2>
+    <p>
+        Your account activation payment could not be processed. Please check your connection and try again.
+    </p>
+    <div class="error-code">Status: Payment_Not_Found</div>
+</div>
+
+<div class="btn-container">
+    <a href="payment.html" class="btn">RE-TRY ACTIVATION</a>
+    
+    <div class="help-text">
+        Need assistance? <br>
+        Contact <a href="mailto:smartearnhelp@gmail.com">smartearnhelp@gmail.com</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#000;
+  color:#fff;
+}
+
+header{
+  display:flex;
+  align-items:center;
+  padding:12px 18px;
+  background:#111;
+}
+
+header img{
+  width:40px;
+  height:40px;
+  margin-right:10px;
+}
+
+header h2{
+  font-size:20px;
+}
+
+.container{
+  padding:20px;
+}
+
+.support-card{
+  background:#1c1c1c;
+  border-radius:16px;
+  margin-bottom:20px;
+  padding:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.support-card img{
+  width:40px;
+  height:40px;
+}
+
+.support-card button{
+  padding:10px 18px;
+  border:none;
+  border-radius:12px;
+  background:#ffd400;
+  font-weight:bold;
+  cursor:pointer;
+  color:#000;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="images/file_00000000361871f4a4bd5a989713c41b.png" alt="Support Logo">
+  <h2>Support</h2>
+</header>
+
+<div class="container">
+
+  <!-- WhatsApp Support -->
+  <div class="support-card">
+    <div style="display:flex;align-items:center;">
+      <img src="images/WhatsApp.svg" alt="WhatsApp Logo">
+      <p style="margin-left:10px;">WhatsApp Support</p>
+    </div>
+    <button onclick="openWhatsapp()">Chat Now</button>
+  </div>
+
+  <!-- Telegram Support -->
+  <div class="support-card">
+    <div style="display:flex;align-items:center;">
+      <img src="images/Telegram_logo.svg" alt="Telegram Logo">
+      <p style="margin-left:10px;">Telegram Support</p>
+    </div>
+    <button onclick="openTelegram()">Chat Now</button>
+  </div>
+
+</div>
+
+<script>
+// Replace with your WhatsApp number
+function openWhatsapp(){
+  window.open("https://wa.me/+2349035058272", "_blank"); // 
+}
+
+// Replace with your Telegram username
+function openTelegram(){
+  window.open("https://t.me/Smartearn247", "_blank"); // 
+}
+</script>
+
+
+</body></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TV Subscription</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    body{ margin:0; background:#000; font-family: Arial, sans-serif; color:white; }
+    .header{ background:#ffcc00; color:black; display:flex; align-items:center; padding:15px; font-size:20px; font-weight:bold; }
+    .header i{ margin-right: 15px; cursor: pointer; }
+    .container{ padding:20px; }
+    .list-item { background:#111; padding:20px; border-radius:15px; margin-bottom:15px; display:flex; align-items:center; border: 1px solid #333; cursor:pointer; }
+    .list-item i { font-size: 24px; margin-right: 20px; color: #ffcc00; }
+    #subForm { display: none; background:#111; padding:20px; border-radius:15px; border: 1px solid #333; }
+    input{ width:100%; padding:15px; border-radius:10px; border:none; background:#222; color:#fff; font-size:16px; margin-bottom: 15px; box-sizing: border-box; }
+    .btn{ width:100%; padding:15px; border-radius:10px; border:none; background:#ffcc00; color:#000; font-weight:bold; cursor:pointer; }
+</style>
+</head>
+<body>
+
+<div class="header"><i class="fas fa-arrow-left" onclick="history.back()"></i> TV Subscription</div>
+
+<div class="container">
+    <div id="tvList">
+        <div class="list-item" onclick="showTv('DSTV')"><i class="fas fa-tv"></i> <span>DSTV</span></div>
+        <div class="list-item" onclick="showTv('GOTV')"><i class="fas fa-satellite"></i> <span>GOTV</span></div>
+        <div class="list-item" onclick="showTv('Startimes')"><i class="fas fa-broadcast-tower"></i> <span>Startimes</span></div>
+    </div>
+
+    <div id="subForm">
+        <h3 id="tvName" style="color:#ffcc00; margin-top:0;"></h3>
+        <p style="color:#aaa;">SMART CARD NUMBER</p>
+        <input type="number" id="scNum" placeholder="Enter Card Number">
+        <p style="color:#aaa;">SELECT PLAN AMOUNT</p>
+        <input type="number" id="tvAmt" placeholder="Enter Amount">
+        <button class="btn" onclick="window.location.href='payment.html'">RENEW NOW</button>
+    </div>
+</div>
+
+<script>
+    function showTv(name) {
+        document.getElementById('tvList').style.display = 'none';
+        document.getElementById('subForm').style.display = 'block';
+        document.getElementById('tvName').innerText = name + " Subscription";
+    }
+</script>
+</body>
+</html>

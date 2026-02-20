@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirming Payment</title>
+
+<style>
+body {
+  margin: 0;
+  background-color: #000;
+  font-family: Arial, sans-serif;
+  color: #FFD700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Text */
+.text {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Spinner */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #333;
+  border-top: 6px solid #FFD700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="text" id="statusText">CONFIRMING PAYMENT…</div>
+<div class="spinner"></div>
+
+<script>
+// Change text after 4 seconds
+setTimeout(() => {
+  document.getElementById("statusText").innerText = "ANALYZING ACCOUNT…";
+}, 4000);
+
+// End after 8 seconds (redirect optional)
+setTimeout(() => {
+  window.location.href = "success.html";
+}, 8000);
+</script>
+
+
+</body></html>

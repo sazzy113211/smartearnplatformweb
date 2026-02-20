@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection Deposit</title>
+<style>
+body{
+    margin:0;
+    background:#000;
+    font-family: Arial, sans-serif;
+    color:white;
+}
+
+/* Header */
+.header{
+    background:#ffcc00;
+    color:black;
+    text-align:center;
+    padding:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* Card */
+.card{
+    background:#111;
+    margin:20px;
+    border-radius:15px;
+    padding:20px;
+}
+
+/* Account info box */
+.account-box{
+    border: 2px solid #ffcc00;
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:20px;
+}
+
+.account-box p{
+    margin:8px 0;
+    font-size:18px;
+    font-weight:bold;
+    color:#ffcc00;
+}
+
+/* Buttons */
+.button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.green-btn{
+    background:#00ff00;
+    color:black;
+}
+
+.yellow-btn{
+    background:#ffcc00;
+    color:black;
+}
+
+/* Clipboard icon */
+.copy-icon{
+    cursor:pointer;
+    margin-left:10px;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">Connection Deposit</div>
+
+<!-- Card -->
+<div class="card">
+
+<p>Pay exactly the fee below to activate:</p>
+
+<div class="account-box">
+    <p>account: 7047897105 <span class="copy-icon" onclick="copyAccount()">📋</span></p>
+    <p>Bank: MONIEPOINT</p>
+    <p>Name: GODMAN GODDY</p>
+    <p>Fee: 10,000</p>
+</div>
+
+<button class="button green-btn" onclick="window.location.href='confirming.html'">I have made this bank transfer</button>
+<button class="button yellow-btn" onclick="history.back()">GO BACK</button>
+
+</div>
+
+<script>
+function copyAccount(){
+    navigator.clipboard.writeText('7047897105')
+    .then(() => alert('Account number copied!'))
+    .catch(err => alert('Failed to copy'));
+}
+</script>
+
+
+</body></html>

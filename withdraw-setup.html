@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Earn Withdraw</title>
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    font-family: Arial, sans-serif;
+    color:white;
+}
+
+/* Header */
+.header{
+    background:#111;
+    display:flex;
+    align-items:center;
+    padding:10px;
+}
+
+.logo{
+    width:40px;
+    height:40px;
+    border-radius:5px;
+    background:#ffcc00;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:black;
+    font-weight:bold;
+}
+
+.header-title{
+    margin-left:10px;
+    font-size:18px;
+}
+
+/* Yellow Bar */
+.yellow-bar{
+    background:#ffcc00;
+    color:black;
+    text-align:center;
+    font-weight:bold;
+    padding:12px;
+    font-size:18px;
+}
+
+/* Card */
+.card{
+    background:#1a1a1a;
+    margin:20px;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.card p{
+    color:#ffcc00;
+    font-size:16px;
+    line-height:1.6;
+}
+
+/* Buttons */
+.btn{
+    background:#ffcc00;
+    color:black;
+    border:none;
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.btn:active{
+    transform:scale(0.98);
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="logo">SE</div>
+    <div class="header-title">Smart earn</div>
+</div>
+
+<div class="yellow-bar">Dear User</div>
+
+<div class="card">
+    <p>
+        As this is your first time withdraw from Smart Earn, you have to connect your account details for you to received your alert immediately.
+    </p>
+
+    <button class="btn" onclick="window.location.href='connect.html'">CONNECT ACCOUNT DETAILS</button>
+    <button class="btn" onclick="history.back()">GO BACK</button>
+</div>
+
+
+</body></html>

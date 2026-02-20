@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invite Friends</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    body{ margin:0; background:#000; font-family: Arial, sans-serif; color:white; text-align:center; }
+    .header{ background:#ffcc00; color:black; display:flex; align-items:center; padding:15px; font-size:20px; font-weight:bold; text-align:left;}
+    .header i{ margin-right: 15px; cursor: pointer; }
+    .container{ padding:30px; }
+    .gift-icon { font-size: 80px; color: #ffcc00; margin-bottom: 20px; }
+    .card { background:#111; padding:25px; border-radius:20px; border: 1px dashed #ffcc00; }
+    h2 { margin: 10px 0; }
+    p { color: #aaa; line-height: 1.5; }
+    .ref-box { background:#222; padding:15px; border-radius:10px; margin: 20px 0; font-weight: bold; color: #ffcc00; font-size: 14px; word-break: break-all; }
+    .btn { width:100%; padding:15px; border-radius:10px; border:none; background:#ffcc00; color:#000; font-weight:bold; cursor:pointer; font-size:16px; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<div class="header"><i class="fas fa-arrow-left" onclick="history.back()"></i> Invite & Earn</div>
+
+<div class="container">
+    <i class="fas fa-gift gift-icon"></i>
+    <h2>Refer & Earn ₦2,500</h2>
+    <p>Invite your friends to Smart Earn. You get ₦2,500 immediately they connect their account!</p>
+    
+    <div class="card">
+        <p>YOUR REFERRAL LINK</p>
+        <div class="ref-box" id="refLink">https://smartearn.app/join/ref?id=77210</div>
+        <button class="btn" onclick="copyLink()"><i class="fas fa-copy"></i> COPY LINK</button>
+        <button class="btn" style="background:#25d366; color:white;" onclick="shareLink()"><i class="fab fa-whatsapp"></i> SHARE ON WHATSAPP</button>
+    </div>
+</div>
+
+<script>
+    function copyLink() {
+        navigator.clipboard.writeText(document.getElementById('refLink').innerText);
+        alert("Referral link copied!");
+    }
+    function shareLink() {
+        const text = "Join Smart Earn and get ₦100,000 bonus immediately! Register here: " + document.getElementById('refLink').innerText;
+        window.open("whatsapp://send?text=" + encodeURIComponent(text));
+    }
+</script>
+</body>
+</html>

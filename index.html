@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Smart Earn</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      background:#000;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+    }
+    #logo{
+      width:200px;
+      height:200px;
+      animation:zoom 1.5s ease-in-out infinite alternate;
+    }
+    @keyframes zoom{
+      from{transform:scale(.9)}
+      to{transform:scale(1.1)}
+    }
+    #loading{
+      margin-top:20px;
+      color:#ffd400;
+      font-size:20px;
+      font-weight:bold;
+      letter-spacing:2px;
+    }
+  </style>
+</head>
+<body>
+  <img id="logo" src="images/file_00000000361871f4a4bd5a989713c41b.png" alt="Smart Earn Logo">
+  <div id="loading">LOADING</div>
+  <script>
+    setTimeout(()=>{
+      window.location.href='login.html';
+    },4000);
+  </script>
+
+</body></html>

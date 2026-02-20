@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Groups</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#000;
+  color:#fff;
+}
+
+header{
+  display:flex;
+  align-items:center;
+  padding:12px 18px;
+  background:#111;
+}
+
+header img{
+  width:40px;
+  height:40px;
+  margin-right:10px;
+}
+
+header h2{
+  font-size:20px;
+}
+
+.container{
+  padding:20px;
+}
+
+.group-card{
+  background:#1c1c1c;
+  border-radius:16px;
+  margin-bottom:20px;
+  padding:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.group-card img{
+  width:40px;
+  height:40px;
+}
+
+.group-card button{
+  padding:10px 18px;
+  border:none;
+  border-radius:12px;
+  background:#25D366; /* WhatsApp green */
+  font-weight:bold;
+  cursor:pointer;
+  color:#fff;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="images/file_00000000361871f4a4bd5a989713c41b.png" alt="Smart Earn Logo">
+  <h2>Groups</h2>
+</header>
+
+<div class="container">
+
+  <!-- WhatsApp Group -->
+  <div class="group-card">
+    <div style="display:flex;align-items:center;">
+      <img src="images/WhatsApp.svg" alt="WhatsApp Logo">
+      <p style="margin-left:10px;">Join Our WhatsApp Group</p>
+    </div>
+    <button onclick="joinWhatsapp()">Join Now</button>
+  </div>
+
+</div>
+
+<script>
+function joinWhatsapp(){
+  // Open the WhatsApp group link
+  window.open("https://chat.whatsapp.com/F8NjD0J9GqIEuuxMXPvwff", "_blank");
+}
+</script>
+
+
+</body></html>
